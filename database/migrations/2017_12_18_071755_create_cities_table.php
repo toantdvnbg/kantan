@@ -15,7 +15,12 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('title',200)->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->integer('ord')->nullable();
+            $table->integer('status')->nullable();
+            $table->timestamp('created_at')->useCurrent()->comment('作成日');
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))->comment('更新日');
         });
     }
 
