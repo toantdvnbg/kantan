@@ -4,13 +4,11 @@ namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EventType extends Model
+class ProductCategory extends Model
 {
 	public $timestamps = false;
-    protected $fillable = ['event_type', 'name', 'create_date', 'update_date'];
-    protected $table = 'ccll_r_event_type';
-    // const CREATED_AT = 'create_at';
-    // const UPDATED_AT = 'update_at';
+    protected $fillable = ['title', 'parent_id', 'ord', 'status', 'publish'];
+    protected $table = 'product_categories';
     /**
      * Get the tabs
      */

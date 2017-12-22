@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Entities\Event;
-use App\Repositories\EventRepository;
+use App\Entities\ProductCategory;
+use App\Repositories\ProductCategoryRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -11,7 +11,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
  * Class GameRepositoryEloquent
  * @package namespace App\Repositories;
  */
-class EventRepositoryEloquent extends BaseRepository implements EventRepository
+class ProductCategoryRepositoryEloquent extends BaseRepository implements ProductCategoryRepository
 {
     /**
      * Specify Model class name
@@ -20,7 +20,7 @@ class EventRepositoryEloquent extends BaseRepository implements EventRepository
      */
     public function model()
     {
-        return Event::class;
+        return ProductCategory::class;
     }
 
     /**

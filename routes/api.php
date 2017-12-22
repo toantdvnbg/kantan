@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['prefix' => '', 'namespace' => 'API', 'as' => 'api.'], function () {//Route::resource('city', 'CityController');
+	Route::resource('city', 'CityController');
+	Route::match(['get'],'city/subCity/{id}', 'CityController@getSubCity')->name('city.subCity');	
+
+	Route::resource('category', 'ProductCategoryController');
+	Route::match(['get'],'category/subCategory/{id}', 'ProductCategoryController@getSubCategory')->name('category.subCategory');
+});
